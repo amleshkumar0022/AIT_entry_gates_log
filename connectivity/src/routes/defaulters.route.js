@@ -1,5 +1,9 @@
-import express from 'express';
-import Out from './outModel.js'; // Ensure the path is correct
+import express from 'express'
+const router=express.Router();
+import Out from '../models/out.models.js';
+import connection from '../db/index.js';
+
+connection();
 
 const router = express.Router();
 router.get('/defaulters', async (req, res) => {
@@ -10,3 +14,5 @@ router.get('/defaulters', async (req, res) => {
         res.status(500).json({ message: 'Error retrieving defaulters' });
     }
 });
+
+export default router;
