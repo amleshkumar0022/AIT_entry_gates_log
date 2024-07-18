@@ -1,19 +1,11 @@
-import mysql from 'mysql2/promise';
-import { DB_NAME, DB_HOST, DB_USER, DB_PASSWORD } from '../constants.js';
+import mongoose from "mongoose";
+import {DB_NAME} from "../constants.js"
 
-const connection = async () => {
-  try {
-    const conn = await mysql.createConnection({
-      host: DB_HOST,
-      user: DB_USER,
-      password: DB_PASSWORD,
-      database: DB_NAME,
-    });
-    console.log('connected');
-    return conn;
-  } catch (err) {
-    console.log('error:', err);
-  }
-};
-
-export default connection;
+const connection=async()=>{
+    const conn=await mongoose.connect("mongodb+srv://amlesh:Amlesh123@cluster0.b50k9k9.mongodb.net/test?retryWrites=true&w=majority").then(()=>{
+        console.log("connected");
+    }).catch((err)=>{
+        console.log("error123")
+    })
+}
+export default connection
