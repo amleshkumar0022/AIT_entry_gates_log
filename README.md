@@ -30,3 +30,31 @@ A Node.js-based backend project to manage and track student entry/exit activity 
 
 ## 📁 Folder Structure
 
+entry-gate-log-system/
+│
+├── src/
+│   ├── components/
+│   │   ├── hostlers/         # Logic for hostler entry/exit
+│   │   ├── dayscholars/      # Logic for day scholar entry/exit
+│   │   ├── register/         # Student/staff registration
+│   │   └── staff/            # Staff-related operations
+│   │
+│   ├── middleware/           # Custom auth/middleware logic
+│   ├── models/               # Mongoose schemas for DB (User, DailyRecord, Defaulters)
+│   ├── utils/                # Helper functions (e.g., time checks)
+│   └── cron/                 # Cron jobs (e.g., midnight cleanup)
+│
+├── .env                      # Environment variables
+├── package.json              # Project dependencies and scripts
+├── server.js                 # Entry point to run the Express app
+└── README.md                 # Project documentation (you’re here!)
+
+
+
+
+
+
+
+
+
+
